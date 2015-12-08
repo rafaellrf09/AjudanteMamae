@@ -22,5 +22,10 @@ module AjudanteMamae
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.time_zone = 'Brasilia'
+
+    config.i18n.default_locale = :"pt-BR"
+
+    config.versao = `git describe --abbrev=0 --tags`.chomp rescue "0.0.0"
   end
 end
