@@ -1,13 +1,13 @@
-<%= form_for @bebe, :html => { :class => "form-horizontal bebe" } do |f| %>
+<%= form_for @rotina, :html => { :class => "form-horizontal rotina" } do |f| %>
 
-  <% if @bebe.errors.any? %>
+  <% if @rotina.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@bebe.errors.count, "error") %> prohibited this bebe from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@rotina.errors.count, "error") %> prohibited this rotina from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>
-        <% @bebe.errors.full_messages.each do |msg| %>
+        <% @rotina.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>
@@ -23,18 +23,19 @@
     <%=f.error_span(:nome) %>
   </div>
   <div class="form-group">
-    <%= f.label :idade, :class => 'control-label col-lg-2' %>
+    <%= f.label :bebes_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.number_field :idade, :class => 'form-control' %>
+      <%= f.collection_select(:bebes_id, Bebe.order(:nome),
+                                    :id, :nome, :prompt => true) %>
     </div>
-    <%=f.error_span(:idade) %>
+    <%=f.error_span(:bebes_id) %>
   </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                bebes_path, :class => 'btn btn-default' %>
+                rotinas_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
