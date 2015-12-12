@@ -1,0 +1,23 @@
+%h1 Listing dieta
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Bebe
+      %th
+      %th
+      %th
+
+  %tbody
+    - @dieta.each do |dietum|
+      %tr
+        %td= dietum.nome
+        %td= dietum.bebe
+        %td= link_to 'Show', dietum
+        %td= link_to 'Edit', edit_dietum_path(dietum)
+        %td= link_to 'Destroy', dietum, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dietum', new_dietum_path

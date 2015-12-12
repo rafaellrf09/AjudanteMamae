@@ -1,0 +1,27 @@
+%h1 Listing farmacia
+
+%table
+  %thead
+    %tr
+      %th Nome
+      %th Latitude
+      %th Longitude
+      %th Elevacao
+      %th
+      %th
+      %th
+
+  %tbody
+    - @farmacia.each do |farmacium|
+      %tr
+        %td= farmacium.nome
+        %td= farmacium.latitude
+        %td= farmacium.longitude
+        %td= farmacium.elevacao
+        %td= link_to 'Show', farmacium
+        %td= link_to 'Edit', edit_farmacium_path(farmacium)
+        %td= link_to 'Destroy', farmacium, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Farmacium', new_farmacium_path

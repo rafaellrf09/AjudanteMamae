@@ -1,0 +1,22 @@
+= form_for @farmacium do |f|
+  - if @farmacium.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@farmacium.errors.count, "error")} prohibited this farmacium from being saved:"
+      %ul
+        - @farmacium.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :elevacao
+    = f.text_field :elevacao
+  .actions
+    = f.submit 'Save'

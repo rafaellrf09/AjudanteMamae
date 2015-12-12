@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :rotinas
-  resources :cadastros
   resources :bebes
+  resources :items
+  resources :dieta
+  resources :farmacia
+  resources :cadastros
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

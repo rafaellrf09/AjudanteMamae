@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @item.nome
+%p
+  %b Hora:
+  = @item.hora
+%p
+  %b Dieta:
+  = @item.dieta
+
+= link_to 'Edit', edit_item_path(@item)
+\|
+= link_to 'Back', items_path

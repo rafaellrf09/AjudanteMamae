@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209125923) do
+ActiveRecord::Schema.define(version: 20151212214525) do
 
   create_table "bebes", force: :cascade do |t|
     t.string   "nome"
@@ -21,26 +21,38 @@ ActiveRecord::Schema.define(version: 20151209125923) do
   end
 
   create_table "cadastros", force: :cascade do |t|
-    t.string   "nome"
+    t.string   "usuario"
     t.string   "senha"
-    t.string   "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "rotinas", force: :cascade do |t|
+  create_table "dieta", force: :cascade do |t|
     t.string   "nome"
-    t.integer  "bebes_id"
+    t.integer  "bebe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "rotinas", ["bebes_id"], name: "index_rotinas_on_bebes_id"
+  add_index "dieta", ["bebe_id"], name: "index_dieta_on_bebe_id"
 
-  create_table "testes", force: :cascade do |t|
+  create_table "farmacia", force: :cascade do |t|
     t.string   "nome"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.decimal  "elevacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "nome"
+    t.time     "hora"
+    t.integer  "dieta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "items", ["dieta_id"], name: "index_items_on_dieta_id"
 
 end

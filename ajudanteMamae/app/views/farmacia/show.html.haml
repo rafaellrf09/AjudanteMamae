@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @farmacium.nome
+%p
+  %b Latitude:
+  = @farmacium.latitude
+%p
+  %b Longitude:
+  = @farmacium.longitude
+%p
+  %b Elevacao:
+  = @farmacium.elevacao
+
+= link_to 'Edit', edit_farmacium_path(@farmacium)
+\|
+= link_to 'Back', farmacia_path

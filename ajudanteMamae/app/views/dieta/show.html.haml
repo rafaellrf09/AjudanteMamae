@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @dietum.nome
+%p
+  %b Bebe:
+  = @dietum.bebe
+
+= link_to 'Edit', edit_dietum_path(@dietum)
+\|
+= link_to 'Back', dieta_path
