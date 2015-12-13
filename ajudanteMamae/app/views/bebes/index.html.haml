@@ -14,10 +14,10 @@
       %tr
         %td= bebe.nome
         %td= bebe.idade
-        %td= link_to 'Show', bebe
-        %td= link_to 'Edit', edit_bebe_path(bebe)
-        %td= link_to 'Destroy', bebe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Mostrar', bebe
+        %td= link_to 'Editar', edit_bebe_path(bebe)
+        %td= link_to 'Excluir', bebe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Bebe', new_bebe_path
+= link_to 'Novo Bebe', new_bebe_path

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :dieta
   resources :bebes
   resources :items
-  resources :dieta
   resources :farmacia
   resources :cadastros
   # The priority is based upon order of creation: first created -> highest priority.
