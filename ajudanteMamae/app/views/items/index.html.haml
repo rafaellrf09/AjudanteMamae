@@ -3,9 +3,8 @@
 %table
   %thead
     %tr
-      %th Nome
       %th Hora
-      %th Dieta
+      %th Dietum
       %th
       %th
       %th
@@ -13,9 +12,8 @@
   %tbody
     - @items.each do |item|
       %tr
-        %td= item.nome
         %td= item.hora
-        %td= item.dieta
+        %td= item.dietum
         %td= link_to 'Show', item
         %td= link_to 'Edit', edit_item_path(item)
         %td= link_to 'Destroy', item, :method => :delete, :data => { :confirm => 'Are you sure?' }

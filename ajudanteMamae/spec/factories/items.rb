@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :item do
-    nome "MyString"
-hora "2015-12-12 19:31:00"
-dieta nil
+    hora "2015-12-14 12:02:39"
+dietum nil
   end
 
 end
