@@ -1,8 +1,8 @@
 class BebesController < ApplicationController
   before_action :set_bebe, only: [:show, :edit, :update, :destroy]
 
-  # GET /bebes
-  # GET /bebes.json
+   #GET /bebes
+   #GET /bebes.json
   def index
     @bebes = Bebe.all
   end

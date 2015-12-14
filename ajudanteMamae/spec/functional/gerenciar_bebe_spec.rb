@@ -2,6 +2,7 @@
 
 
 require 'rails_helper'
+require 'spec_helper'
 
 feature 'gerenciar bebe' do
 

@@ -11,6 +11,11 @@
     = f.text_field :nome
   .field
     = f.label :bebe
-    = f.text_field :bebe 
+    - if @dietum.bebe.reference?
+      \%= f.label :%= attribute.column_name %>  %>
+      \%= f.collection_select :%= attribute.column_name %>, #{attribute.name.camelize}.all, :id, :name, prompt: true  %>
+    - else 
+   
+    = f.association :bebe, label_method: :nome
   .actions
     = f.submit 'Save'

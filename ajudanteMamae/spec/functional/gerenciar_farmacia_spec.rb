@@ -2,6 +2,7 @@
 
 
 require 'rails_helper'
+require 'spec_helper'
 
 feature 'gerenciar farmacia' do
 
@@ -23,7 +24,7 @@ feature 'gerenciar farmacia' do
 
     farmacia = FactoryGirl.create(:farmacium)
     visit farmacia_path
-    click_on 'Destroy'
+    click_link 'Apagar'
 
   end
 
@@ -38,7 +39,8 @@ feature 'gerenciar farmacia' do
       expect(page).to have_content 'Nome: Tia juce'
       expect(page).to have_content 'Latitude: 30.0'
       expect(page).to have_content 'Longitude: 20.0'
-      expect(page).to have_content 'Elevacao: 10.0'      
+      expect(page).to have_content 'Elevacao: 10.0'  
+         
       
    end
 end

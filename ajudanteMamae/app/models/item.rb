@@ -1,3 +1,3 @@
 class Item < ActiveRecord::Base
-  belongs_to :dieta
+  belongs_to :Dietum
 end
